@@ -1,16 +1,5 @@
 [
     {
-        "name": "Wooden Sword",
-        "price": 108,
-        "labels": [
-            "Puzzle",
-            "Box game"
-        ],
-        "inStock": false,
-        "_id": "EcvVJ",
-        "createdAt": 1730302963638
-    },
-    {
         "_id": "t102",
         "name": "Wooden Puzzle",
         "price": 45,

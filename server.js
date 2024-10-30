@@ -1,20 +1,30 @@
+import cors from 'cors'
 import express from 'express'
 import cookieParser from 'cookie-parser'
 import { toyService } from './services/toy.service.js'
 import { loggerService } from "./services/logger.service.js"
 
 const app = express()
-const PORT = process.env.PORT || 3030
 
-app.listen(PORT, () => console.log(`Server ready at port ${PORT}`))
+const corsOptions = {
+    origin: [
+        'http://127.0.0.1:8080',
+        'http://localhost:8080',
+        'http://127.0.0.1:5173',
+        'http://localhost:5173'
+    ],
+    credentials: true
+}
+
 
 //express configuration
 app.use(express.static('public'))
 app.use(cookieParser())
 app.use(express.json())
-
+app.use(cors(corsOptions))
 
 //express routing for toys:
+
 //read list
 app.get('/api/toy', ({ query }, res) => {
     const filterBy = { name: query.name || '', price: +query.price || 0, inStock: query.inStock || '', labels: query.labels || [], sort: query.sort || '' }
@@ -23,6 +33,18 @@ app.get('/api/toy', ({ query }, res) => {
         .catch(err => {
             loggerService.error('Cannot find toys', err)
             res.status(500).send('Cannot find toys')
+        })
+})
+
+//read item
+app.get('/api/toy/:toyId', (req, res) => {
+    const { toyId } = req.params
+    console.log(toyId)
+    toyService.get(toyId)
+        .then(toy => res.send(toy))
+        .catch(err => {
+            loggerService.error('Cannot find toy', err)
+            res.status(500).send('Cannot find toy')
         })
 })
 
@@ -52,17 +74,6 @@ app.put('/api/toy/:toyId', (req, res) => {
         })
 })
 
-//read item
-app.get('/api/toy/:toyId', (req, res) => {
-    const { toyId } = req.params
-    toyService.get(toyId)
-        .then(toy => res.send(toy))
-        .catch(err => {
-            loggerService.error('Cannot find toy', err)
-            res.status(500).send('Cannot find toy')
-        })
-})
-
 //delete
 app.delete('/api/toy/:toyId', (req, res) => {
     const { toyId } = req.params
@@ -73,3 +84,7 @@ app.delete('/api/toy/:toyId', (req, res) => {
             res.status(500).send('Cannot remove toy')
         })
 })
+
+const PORT = process.env.PORT || 3030
+
+app.listen(PORT, () => console.log(`Server ready at port ${PORT}`))

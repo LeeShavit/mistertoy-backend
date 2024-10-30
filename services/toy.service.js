@@ -41,6 +41,7 @@ function get(toyId) {
 }
 
 function remove(toyId) {
+    console.log(toyId)
     const idx = toys.findIndex(toy => toy._id === toyId)
     if( idx< 0) return Promise.reject('toy not fount')
     toys.splice(idx,1)
