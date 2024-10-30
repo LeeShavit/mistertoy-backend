@@ -1,0 +1,226 @@
+[
+    {
+      "_id": "t101",
+      "name": "Talking Doll",
+      "price": 123,
+      "labels": ["Doll", "Battery Powered", "Baby"],
+      "createdAt": 1631031801011,
+      "inStock": true
+    },
+    {
+      "_id": "t102",
+      "name": "Wooden Puzzle",
+      "price": 45,
+      "labels": ["Puzzle", "Box game"],
+      "createdAt": 1631031801012,
+      "inStock": true
+    },
+    {
+      "_id": "t103",
+      "name": "Remote Control Car",
+      "price": 99,
+      "labels": ["On wheels", "Battery Powered", "Outdoor"],
+      "createdAt": 1631031801013,
+      "inStock": true
+    },
+    {
+      "_id": "t104",
+      "labels": ["Art", "Box game"],
+      "name": "Coloring Book",
+      "price": 15,
+      "createdAt": 1631031801014,
+      "inStock": true
+    },
+    {
+      "_id": "t105",
+      "name": "Soft Toy Bear",
+      "price": 25,
+      "labels": ["Baby", "Doll"],
+      "createdAt": 1631031801015,
+      "inStock": true
+    },
+    {
+      "_id": "t106",
+      "name": "Building Blocks",
+      "price": 35,
+      "labels": ["Puzzle", "Box game"],
+      "createdAt": 1631031801016,
+      "inStock": true
+    },
+    {
+      "_id": "t107",
+      "name": "Ride-On Car",
+      "price": 150,
+      "labels": ["On wheels", "Outdoor"],
+      "createdAt": 1631031801017,
+      "inStock": true
+    },
+    {
+      "_id": "t108",
+      "name": "Playdough Set",
+      "price": 20,
+      "labels": ["Art", "Box game"],
+      "createdAt": 1631031801018,
+      "inStock": false
+    },
+    {
+      "_id": "t109",
+      "name": "Rattle",
+      "price": 10,
+      "labels": ["Baby"],
+      "createdAt": 1631031801019,
+      "inStock": true
+    },
+    {
+      "_id": "t110",
+      "name": "Board Game",
+      "price": 30,
+      "labels": ["Box game"],
+      "createdAt": 1631031801020,
+      "inStock": true
+    },
+    {
+      "_id": "t111",
+      "name": "Painting Set",
+      "price": 25,
+      "labels": ["Art"],
+      "createdAt": 1631031801021,
+      "inStock": true
+    },
+    {
+      "_id": "t112",
+      "name": "Dollhouse",
+      "price": 50,
+      "labels": ["Doll", "Box game"],
+      "createdAt": 1631031801022,
+      "inStock": true
+    },
+    {
+      "_id": "t113",
+      "name": "Swing Set",
+      "price": 100,
+      "labels": ["Outdoor"],
+      "createdAt": 1631031801023,
+      "inStock": true
+    },
+    {
+      "_id": "t114",
+      "name": "Robot Toy",
+      "price": 75,
+      "labels": ["Battery Powered"],
+      "createdAt": 1631031801024,
+      "inStock": true
+    },
+    {
+      "_id": "t115",
+      "name": "Play Kitchen",
+      "price": 40,
+      "labels": ["Box game", "Baby"],
+      "createdAt": 1631031801025,
+      "inStock": true
+    },
+    {
+      "_id": "t116",
+      "name": "Stuffed Animal",
+      "price": 18,
+      "labels": ["Doll"],
+      "createdAt": 1631031801026,
+      "inStock": true
+    },
+    {
+      "_id": "t117",
+      "name": "Remote Control Helicopter",
+      "price": 120,
+      "labels": ["On wheels", "Battery Powered", "Outdoor"],
+      "createdAt": 1631031801027,
+      "inStock": true
+    },
+    {
+      "_id": "t118",
+      "name": "Card Game",
+      "price": 12,
+      "labels": ["Box game"],
+      "createdAt": 1631031801028,
+      "inStock": true
+    },
+    {
+      "_id": "t119",
+      "name": "Play Tent",
+      "price": 30,
+      "labels": ["Outdoor", "Baby"],
+      "createdAt": 1631031801029,
+      "inStock": true
+    },
+    {
+      "_id": "t120",
+      "name": "Wooden Train Set",
+      "price": 60,
+      "labels": ["On wheels", "Box game"],
+      "createdAt": 1631031801030,
+      "inStock": false
+    },
+    {
+      "_id": "t121",
+      "name": "Clay Modeling Kit",
+      "price": 22,
+      "labels": ["Art"],
+      "createdAt": 1631031801031,
+      "inStock": true
+    },
+    {
+      "_id": "t122",
+      "name": "Baby Walker",
+      "price": 55,
+      "labels": ["On wheels", "Baby"],
+      "createdAt": 1631031801032,
+      "inStock": false
+    },
+    {
+      "_id": "t123",
+      "name": "Puzzle Ball",
+      "price": 18,
+      "labels": ["Puzzle"],
+      "createdAt": 1631031801033,
+      "inStock": true
+    },
+    {
+      "_id": "t124",
+      "name": "Board Game",
+      "price": 35,
+      "labels": ["Box game"],
+      "createdAt": 1631031801034,
+      "inStock": true
+    },
+    {
+      "_id": "t125",
+      "name": "Sandbox",
+      "price": 45,
+      "labels": ["Outdoor"],
+      "createdAt": 1631031801035,
+      "inStock": true
+    },
+    {
+      "_id": "t126",
+      "name": "Remote Control Dinosaur",
+      "price": 80,
+      "labels": ["Battery Powered", "Outdoor"],
+      "createdAt": 1631031801036,
+      "inStock": true
+    },
+    {
+      "_id": "t127",
+      "name": "Sticker Book",
+      "price": 10,
+      "labels": ["Art"],
+      "createdAt": 1631031801037,
+      "inStock": true
+    },
+    {
+      "_id": "t128",
+      "name": "Musical Toy",
+      "price": 25,
+      "labels": ["Battery Powered", "Baby"],
+      "createdAt": 1631031801038,
+      "inStock": false
+    }
+]
