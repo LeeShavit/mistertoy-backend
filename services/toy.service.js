@@ -3,7 +3,7 @@ import { utilService } from './util.service.js'
 
 const toys = utilService.readJsonFile('./data/toys.json')
 
-export const todoService = {
+export const toyService = {
     query,
     get,
     remove,
@@ -43,14 +43,13 @@ function get(toyId) {
 function remove(toyId) {
     const idx = toys.findIndex(toy => toy._id === toyId)
     if( idx< 0) return Promise.reject('toy not fount')
-
     toys.splice(idx,1)
     return _saveToysToFile()
 }
 
 function save(toyToSave) {
     if (toyToSave._id) {
-        const idx = todos.findIndex(toy => toyToSave._id === toy._id)
+        const idx = toys.findIndex(toy => toyToSave._id === toy._id)
         if (idx < 0) return Promise.reject('toy not found')
 
         toys[idx] = {
@@ -70,7 +69,7 @@ function save(toyToSave) {
     return _saveToysToFile().then(() => toyToSave)
 }
 
-function _saveToysToFile(toys) {
+function _saveToysToFile() {
     return new Promise((resolve, reject) => {
         const data = JSON.stringify(toys, null ,4)
         fs.writeFile('./data/toys.json', data, (err) => {

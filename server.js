@@ -17,7 +17,7 @@ app.use(express.json())
 //express routing for toys:
 //read list
 app.get('/api/toy', ({ query }, res) => {
-    const filterBy ={ name: query.name || '' , price: +query.price || 0, inStock: query.inStock || '', labels: query.labels || [], sort: query.sort  || ''}
+    const filterBy = { name: query.name || '', price: +query.price || 0, inStock: query.inStock || '', labels: query.labels || [], sort: query.sort || '' }
     toyService.query(filterBy)
         .then(toys => res.send(toys))
         .catch(err => {
@@ -28,15 +28,8 @@ app.get('/api/toy', ({ query }, res) => {
 
 //create
 app.post('/api/toy/', (req, res) => {
-    const loggedInUser = userService.validateToken(req.cookies.loginToken)
-    if (!loggedInUser) return res.status(401).send('Cannot create toy')
-
-    const toyToSave = {
-        ...req.body,
-        importance: +req.body.importance,
-        balance: +req.body.balance,
-    }
-    toyService.save(toyToSave, loggedInUser)
+    const toyToSave = { ...req.body, price: +req.body.price, }
+    toyService.save(toyToSave)
         .then(toy => res.send(toy))
         .catch(err => {
             loggerService.error('Cannot create toy', err)
@@ -46,16 +39,12 @@ app.post('/api/toy/', (req, res) => {
 
 //update
 app.put('/api/toy/:toyId', (req, res) => {
-    const loggedInUser = userService.validateToken(req.cookies.loginToken)
-    if (!loggedInUser) return res.status(401).send('Cannot remove toy')
-
     const toyToSave = {
         ...req.body,
-        importance: +req.body.importance,
-        balance: +req.body.balance,
+        price: +req.body.price,
         createdAt: +req.body.createdAt
     }
-    toyService.save(toyToSave, loggedInUser)
+    toyService.save(toyToSave)
         .then(toy => res.send(toy))
         .catch(err => {
             loggerService.error('Cannot save toy', err)
@@ -76,9 +65,6 @@ app.get('/api/toy/:toyId', (req, res) => {
 
 //delete
 app.delete('/api/toy/:toyId', (req, res) => {
-    const loggedInUser = userService.validateToken(req.cookies.loginToken)
-    if (!loggedInUser) return res.status(401).send('Cannot remove toy')
-
     const { toyId } = req.params
     toyService.remove(toyId)
         .then(() => res.send(`toy ${toyId} removed successfully`))
