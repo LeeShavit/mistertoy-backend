@@ -11,6 +11,7 @@ export const toyService = {
 }
 
 function query(filterBy) {
+    console.log(filterBy)
     return Promise.resolve(toys)
         .then(toys => {
             if (filterBy.name) {
@@ -20,7 +21,7 @@ function query(filterBy) {
             if (filterBy.price) toys = toys.filter(toy => toy.price > filterBy.price)
             if (filterBy.inStock === 'true') toys = toys.filter(toy => toy.inStock)
             if (filterBy.inStock === 'false') toys = toys.filter(toy => !toy.inStock)
-            if (filterBy.labels.length !== 0) toys = toys.filter(toy => filterBy.labels.some(label => toy.labels.includes(label.value)))
+            if (filterBy.labels.length !== 0) toys = toys.filter(toy => filterBy.labels.every(label => toy.labels.includes(label)))
             if (filterBy.sort) {
                 switch (filterBy.sort) {
                     case 'name': toys.sort((a, b) => a.name.localeCompare(b.name))
@@ -41,7 +42,6 @@ function get(toyId) {
 }
 
 function remove(toyId) {
-    console.log(toyId)
     const idx = toys.findIndex(toy => toy._id === toyId)
     if( idx< 0) return Promise.reject('toy not fount')
     toys.splice(idx,1)
