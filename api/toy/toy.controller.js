@@ -7,8 +7,8 @@ export async function getToys(req, res) {
         const filterBy = {
             name: req.query.name || '',
             price: req.query.price || '',
-            labels: req.query.labels || [],
-            inStock: req.query.inStock || '',
+            labels: req.query.labels || null,
+            inStock: req.query.inStock || null,
         }
         const toys = await toyService.query(filterBy)
         res.send(toys)
@@ -30,11 +30,12 @@ export async function getToyById(req, res) {
 }
 
 export async function addToy(req, res) {
-
+    const { loggedinUser } = req
     try {
         const toy = req.body
-        const addedCar = await toyService.add(toy)
-        res.send(addedCar)
+        toy.owner = loggedinUser
+        const addedToy = await toyService.add(toy)
+        res.send(addedToy)
     } catch (err) {
         loggerService.error('Failed to add toy', err)
         res.status(500).send({ err: 'Failed to add toy' })
@@ -55,9 +56,8 @@ export async function updateToy(req, res) {
 export async function removeToy(req, res) {
     try {
         const toyId = req.params.id
-        console.log(toyId)
-        const deletedCount = await toyService.remove(toyId)
-        res.send(`${deletedCount} toys removed`)
+        await toyService.remove(toyId)
+        res.send()
     } catch (err) {
         loggerService.error('Failed to remove toy', err)
         res.status(500).send({ err: 'Failed to remove toy' })
@@ -70,9 +70,7 @@ export async function addToyMsg(req, res) {
         const toyId = req.params.id
         const msg = {
             txt: req.body.txt,
-            by: { _id, fullname },
-            createdAt: Date.now(),
-            id: utilService.makeId(4)
+            by: { _id, fullname }
         }
         const savedMsg = await toyService.addToyMsg(toyId, msg)
         res.send(savedMsg)

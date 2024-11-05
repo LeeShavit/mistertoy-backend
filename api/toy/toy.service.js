@@ -16,33 +16,15 @@ export const toyService = {
 }
 
 async function query(filterBy) {
-    console.log(filterBy)
-    const criterion = []
-    if (filterBy.name) criterion.push({ name: { $regex: filterBy.name, $options: 'i' } })
-    if (filterBy.price) criterion.push({ price: { $gt: filterBy.price } })
-    if (filterBy.inStock === 'true') criterion.push({ inStock: true })
-    if (filterBy.inStock === 'false') criterion.push({ inStock: false })
-    if (filterBy.labels.length !== 0) criterion.push({ labels: { $in: filterBy.labels } })
-
+    const sortBy= filterBy.sortBy ? {[filterBy.sort]: 1} : {}
+    const criteria = _buildCriteria(filterBy)
     try {
         const collection = await dbService.getCollection('toy')
-        let toys
-        if (criterion.length === 0) {
-            toys = await collection.find().toArray()
-        } else {
-            const criteria = (criterion.length === 1) ? { ...criterion[0] } : { $and: [...criterion] }
-            if (!filterBy.sort) {
-                toys = await collection.find(criteria).toArray()
-            } else {
-                toys = await collection.find(criteria).sort({ [filterBy.sort]: 1 }).toArray()
-            }
-        }
-        return toys
+        return await collection.find(criteria).sort(sortBy).toArray()
     } catch (err) {
         loggerService.error('Cannot get toys', err)
         throw err
     }
-
 }
 
 async function getById(toyId) {
@@ -99,15 +81,13 @@ async function update(toy) {
 
 async function addToyMsg(toyId, msg) {
     try {
+        msg.createdAt=Date.now()
+        msg.id= utilService.makeId(4)
         const connection = await dbService.getCollection('toy')
-        const toy = await connection.findOne({ _id: ObjectId.createFromHexString(toyId) })
-        if (!toy.msgs) {
-            toy.msgs = [msg]
-            return await connection.updateOne({ _id: ObjectId.createFromHexString(toyId) }, { $set: { ...toy } })
-        } else {
-            console.log(toy)
-            return await connection.updateOne({ _id: ObjectId.createFromHexString(toyId) }, { $push: { msgs: msg } })
-        }
+        await connection.updateOne(
+            { _id: ObjectId.createFromHexString(toyId) },
+            { $push: { msgs: msg } })
+        return msg
     } catch (err) {
         loggerService.error('Cannot add msg', err)
         throw err
@@ -117,9 +97,23 @@ async function addToyMsg(toyId, msg) {
 async function removeToyMsg(toyId, msgId) {
     try {
         const connection = await dbService.getCollection('toy')
-        return await connection.updateOne({ _id: ObjectId.createFromHexString(toyId) }, { $pull: { msgs: { id: msgId } } })
+        return await connection.updateOne(
+            { _id: ObjectId.createFromHexString(toyId) },
+             { $pull: { msgs: { id: msgId } } })
     } catch (err) {
         loggerService.error('Cannot remove msg', err)
         throw err
     }
+}
+
+function _buildCriteria(filterBy) {
+    const { labels, name, inStock, price } = filterBy
+
+    const criteria = {}
+    if (name) criteria.name= { $regex: filterBy.name, $options: 'i' } 
+    if (price) criteria.price= { price: { $gt: filterBy.price } }
+    if (inStock) criteria.inStock= inStock === 'true' ? true : false
+    if (labels && labels.length !== 0) criteria.labels= { $in: labels } 
+
+    return criteria
 }

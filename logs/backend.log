@@ -271,3 +271,97 @@
 4.11.2024, 21:27:01 - INFO - Server is running on port: 3030
 4.11.2024, 21:28:03 - INFO - server.js loaded...
 4.11.2024, 21:28:03 - INFO - Server is running on port: 3030
+5.11.2024, 8:45:21 - INFO - server.js loaded...
+5.11.2024, 8:45:21 - INFO - Server is running on port: 3030
+5.11.2024, 8:46:16 - INFO - server.js loaded...
+5.11.2024, 8:46:16 - INFO - Server is running on port: 3030
+5.11.2024, 8:46:37 - INFO - server.js loaded...
+5.11.2024, 8:46:37 - INFO - Server is running on port: 3030
+5.11.2024, 8:52:19 - INFO - server.js loaded...
+5.11.2024, 8:52:19 - INFO - Server is running on port: 3030
+5.11.2024, 8:54:48 - INFO - server.js loaded...
+5.11.2024, 8:54:48 - INFO - Server is running on port: 3030
+5.11.2024, 8:55:12 - INFO - server.js loaded...
+5.11.2024, 8:55:12 - INFO - Server is running on port: 3030
+5.11.2024, 9:11:16 - INFO - server.js loaded...
+5.11.2024, 9:11:16 - INFO - Server is running on port: 3030
+5.11.2024, 12:52:25 - INFO - server.js loaded...
+5.11.2024, 12:52:25 - INFO - Server is running on port: 3030
+5.11.2024, 12:52:41 - INFO - server.js loaded...
+5.11.2024, 12:52:41 - INFO - Server is running on port: 3030
+5.11.2024, 13:00:08 - INFO - server.js loaded...
+5.11.2024, 13:00:08 - INFO - Server is running on port: 3030
+5.11.2024, 13:02:44 - INFO - server.js loaded...
+5.11.2024, 13:02:44 - INFO - Server is running on port: 3030
+5.11.2024, 13:02:52 - INFO - Req was made | /
+5.11.2024, 13:02:52 - ERROR - Cannot get toys | MongoServerError: Error getting filter : Expected 'filter' to be BSON (or equivalent), but got <nil> instead. Doc = [{find toy} {filter <nil>} {lsid [{id {4 [81 104 193 125 217 189 70 54 144 189 191 236 169 115 127 168]}}]} {$clusterTime [{clusterTime {1730804571 131}} {signature [{hash {0 [153 47 40 210 254 231 179 210 25 152 60 185 87 122 231 189 81 241 239 232]}} {keyId 7383745489943920690}]}]} {$db toy_db}]
+5.11.2024, 13:02:52 - ERROR - Failed to get toys | MongoServerError: Error getting filter : Expected 'filter' to be BSON (or equivalent), but got <nil> instead. Doc = [{find toy} {filter <nil>} {lsid [{id {4 [81 104 193 125 217 189 70 54 144 189 191 236 169 115 127 168]}}]} {$clusterTime [{clusterTime {1730804571 131}} {signature [{hash {0 [153 47 40 210 254 231 179 210 25 152 60 185 87 122 231 189 81 241 239 232]}} {keyId 7383745489943920690}]}]} {$db toy_db}]
+5.11.2024, 13:04:57 - INFO - server.js loaded...
+5.11.2024, 13:04:57 - INFO - Server is running on port: 3030
+5.11.2024, 13:05:04 - INFO - Req was made | /
+5.11.2024, 13:05:04 - ERROR - Failed to get toys | TypeError: Converting circular structure to JSON
+    --> starting at object with constructor 'MongoClient'
+    |     property 's' -> object with constructor 'Object'
+    |     property 'sessionPool' -> object with constructor 'ServerSessionPool'
+    --- property 'client' closes the circle
+5.11.2024, 13:05:26 - INFO - server.js loaded...
+5.11.2024, 13:05:26 - INFO - Server is running on port: 3030
+5.11.2024, 13:05:28 - INFO - Req was made | /
+5.11.2024, 13:05:29 - INFO - Req was made | /
+5.11.2024, 13:05:29 - INFO - Req was made | /
+5.11.2024, 13:09:44 - INFO - server.js loaded...
+5.11.2024, 13:09:44 - INFO - Server is running on port: 3030
+5.11.2024, 13:09:44 - INFO - server.js loaded...
+5.11.2024, 13:09:44 - INFO - Server is running on port: 3030
+5.11.2024, 13:11:09 - INFO - server.js loaded...
+5.11.2024, 13:11:09 - INFO - Server is running on port: 3030
+5.11.2024, 13:14:04 - INFO - server.js loaded...
+5.11.2024, 13:14:04 - INFO - Server is running on port: 3030
+5.11.2024, 13:14:13 - INFO - server.js loaded...
+5.11.2024, 13:14:13 - INFO - Server is running on port: 3030
+5.11.2024, 13:14:47 - INFO - server.js loaded...
+5.11.2024, 13:14:47 - INFO - Server is running on port: 3030
+5.11.2024, 13:15:06 - INFO - server.js loaded...
+5.11.2024, 13:15:06 - INFO - Server is running on port: 3030
+5.11.2024, 13:16:11 - INFO - server.js loaded...
+5.11.2024, 13:16:11 - INFO - Server is running on port: 3030
+5.11.2024, 13:17:12 - INFO - server.js loaded...
+5.11.2024, 13:17:12 - INFO - Server is running on port: 3030
+5.11.2024, 13:17:15 - INFO - server.js loaded...
+5.11.2024, 13:17:15 - INFO - Server is running on port: 3030
+5.11.2024, 13:18:38 - INFO - server.js loaded...
+5.11.2024, 13:18:38 - INFO - Server is running on port: 3030
+5.11.2024, 13:22:58 - INFO - server.js loaded...
+5.11.2024, 13:22:58 - INFO - Server is running on port: 3030
+5.11.2024, 13:26:38 - INFO - server.js loaded...
+5.11.2024, 13:26:38 - INFO - Server is running on port: 3030
+5.11.2024, 13:27:54 - INFO - server.js loaded...
+5.11.2024, 13:27:54 - INFO - Server is running on port: 3030
+5.11.2024, 13:28:08 - INFO - server.js loaded...
+5.11.2024, 13:28:08 - INFO - Server is running on port: 3030
+5.11.2024, 13:32:34 - INFO - Req was made | /
+5.11.2024, 13:32:35 - INFO - Req was made | /
+5.11.2024, 13:40:45 - INFO - Req was made | /
+5.11.2024, 13:40:45 - INFO - Req was made | /
+5.11.2024, 13:40:45 - INFO - Req was made | /
+5.11.2024, 13:44:34 - INFO - Req was made | /
+5.11.2024, 13:44:34 - INFO - Req was made | /
+5.11.2024, 13:44:34 - INFO - Req was made | /
+5.11.2024, 13:44:34 - INFO - Req was made | /
+5.11.2024, 13:44:59 - INFO - Req was made | /
+5.11.2024, 13:45:38 - INFO - Req was made | /
+5.11.2024, 13:46:46 - INFO - Req was made | /
+5.11.2024, 13:46:46 - INFO - Req was made | /
+5.11.2024, 13:46:46 - INFO - Req was made | /
+5.11.2024, 13:47:15 - DEBUG - auth.service - login with username: admin
+5.11.2024, 13:47:15 - INFO - User login:  | {"_id":"6728ee90c516e4bc7b7ff46c","username":"admin","fullname":"Admin","score":0,"isAdmin":true}
+5.11.2024, 13:48:34 - DEBUG - auth.service - login with username: admin
+5.11.2024, 13:48:34 - INFO - User login:  | {"_id":"6728ee90c516e4bc7b7ff46c","username":"admin","fullname":"Admin","score":0,"isAdmin":true}
+5.11.2024, 13:48:38 - INFO - Req was made | /
+5.11.2024, 13:48:38 - INFO - Req was made | /
+5.11.2024, 13:48:38 - INFO - Req was made | /
+5.11.2024, 13:49:35 - INFO - Req was made | /
+5.11.2024, 13:49:44 - INFO - Req was made | /
+5.11.2024, 13:49:59 - INFO - Req was made | /
+5.11.2024, 13:50:05 - INFO - Req was made | /
+5.11.2024, 13:50:39 - INFO - Req was made | /

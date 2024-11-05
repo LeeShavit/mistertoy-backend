@@ -1,4 +1,4 @@
 export default {
-    dbURL: 'mongodb://127.0.0.1:27017',
-    dbName: 'minsterToy',
+    dbURL: 'mongodb+srv://leeshavit10:JLSMJ5pLTS2LVIRC@toy-app.hzhau.mongodb.net/?retryWrites=true&w=majority&appName=toy-app',
+    dbName: 'toy_db',
 }
