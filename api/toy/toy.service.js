@@ -34,7 +34,7 @@ async function getById(toyId) {
         toy.createdAt = toy._id.getTimestamp()
         return toy
     } catch (err) {
-        logger.error('Cannot remove toy', err)
+        logger.error('Cannot get toy', err)
         throw err
     }
 
