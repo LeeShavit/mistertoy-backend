@@ -1,14 +1,5 @@
 [
     {
-        "name": "Lee Shavit",
-        "price": 15,
-        "labels": [],
-        "inStock": false,
-        "_id": "kWtOT",
-        "createdAt": 1699124587
-    },
-    {
-        "_id": "t103",
         "name": "Remote Control Car",
         "price": 99,
         "labels": [
@@ -20,7 +11,6 @@
         "inStock": true
     },
     {
-        "_id": "t105",
         "name": "Soft Toy Bear",
         "price": 25,
         "labels": [
@@ -31,7 +21,6 @@
         "inStock": true
     },
     {
-        "_id": "t106",
         "name": "Building Blocks",
         "price": 35,
         "labels": [
@@ -42,7 +31,6 @@
         "inStock": true
     },
     {
-        "_id": "t107",
         "name": "Ride-On Car",
         "price": 150,
         "labels": [
@@ -53,7 +41,6 @@
         "inStock": true
     },
     {
-        "_id": "t108",
         "name": "Playdough Set",
         "price": 20,
         "labels": [
@@ -64,7 +51,6 @@
         "inStock": false
     },
     {
-        "_id": "t109",
         "name": "Rattle",
         "price": 10,
         "labels": [
@@ -74,7 +60,6 @@
         "inStock": true
     },
     {
-        "_id": "t110",
         "name": "Board Game",
         "price": 30,
         "labels": [
@@ -84,7 +69,6 @@
         "inStock": true
     },
     {
-        "_id": "t111",
         "name": "Painting Set",
         "price": 25,
         "labels": [
@@ -94,7 +78,6 @@
         "inStock": true
     },
     {
-        "_id": "t112",
         "name": "Dollhouse",
         "price": 50,
         "labels": [
@@ -105,7 +88,6 @@
         "inStock": true
     },
     {
-        "_id": "t113",
         "name": "Swing Set",
         "price": 100,
         "labels": [
@@ -115,7 +97,6 @@
         "inStock": true
     },
     {
-        "_id": "t114",
         "name": "Robot Toy",
         "price": 75,
         "labels": [
@@ -125,7 +106,6 @@
         "inStock": true
     },
     {
-        "_id": "t115",
         "name": "Play Kitchen",
         "price": 40,
         "labels": [
@@ -136,7 +116,6 @@
         "inStock": true
     },
     {
-        "_id": "t116",
         "name": "Stuffed Animal",
         "price": 18,
         "labels": [
@@ -146,7 +125,6 @@
         "inStock": true
     },
     {
-        "_id": "t117",
         "name": "Remote Control Helicopter",
         "price": 120,
         "labels": [
@@ -158,7 +136,6 @@
         "inStock": true
     },
     {
-        "_id": "t118",
         "name": "Card Game",
         "price": 12,
         "labels": [
@@ -168,7 +145,6 @@
         "inStock": true
     },
     {
-        "_id": "t119",
         "name": "Play Tent",
         "price": 30,
         "labels": [
@@ -179,7 +155,6 @@
         "inStock": true
     },
     {
-        "_id": "t120",
         "name": "Wooden Train Set",
         "price": 60,
         "labels": [
@@ -190,7 +165,6 @@
         "inStock": false
     },
     {
-        "_id": "t121",
         "name": "Clay Modeling Kit",
         "price": 22,
         "labels": [
@@ -200,7 +174,6 @@
         "inStock": true
     },
     {
-        "_id": "t122",
         "name": "Baby Walker",
         "price": 55,
         "labels": [
@@ -211,7 +184,6 @@
         "inStock": false
     },
     {
-        "_id": "t123",
         "name": "Puzzle Ball",
         "price": 18,
         "labels": [
@@ -221,7 +193,6 @@
         "inStock": true
     },
     {
-        "_id": "t124",
         "name": "Board Game",
         "price": 35,
         "labels": [
@@ -231,7 +202,6 @@
         "inStock": true
     },
     {
-        "_id": "t125",
         "name": "Sandbox",
         "price": 45,
         "labels": [
@@ -241,7 +211,6 @@
         "inStock": true
     },
     {
-        "_id": "t126",
         "name": "Remote Control Dinosaur",
         "price": 80,
         "labels": [
@@ -252,7 +221,6 @@
         "inStock": true
     },
     {
-        "_id": "t127",
         "name": "Sticker Book",
         "price": 10,
         "labels": [
@@ -262,7 +230,6 @@
         "inStock": false
     },
     {
-        "_id": "t128",
         "name": "Musical Toy",
         "price": 25,
         "labels": [
