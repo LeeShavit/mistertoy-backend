@@ -16,11 +16,12 @@ export const toyService = {
 }
 
 async function query(filterBy) {
-    const sortBy= filterBy.sortBy ? {[filterBy.sort]: 1} : {}
-    const criteria = _buildCriteria(filterBy)
     try {
+        const sortBy= filterBy.sortBy ? {[filterBy.sort]: 1} : {}
+        const criteria = _buildCriteria(filterBy)
         const collection = await dbService.getCollection('toy')
-        return await collection.find(criteria).sort(sortBy).toArray()
+        const toys= await collection.find(criteria).sort(sortBy).toArray()
+        return toys
     } catch (err) {
         loggerService.error('Cannot get toys', err)
         throw err

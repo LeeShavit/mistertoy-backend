@@ -11,6 +11,7 @@ export async function getToys(req, res) {
             inStock: req.query.inStock || null,
         }
         const toys = await toyService.query(filterBy)
+        console.log(toys)
         res.send(toys)
     } catch (err) {
         loggerService.error('Failed to get toys', err)

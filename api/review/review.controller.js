@@ -5,7 +5,11 @@ import { asyncLocalStorage } from '../../services/als.service.js'
 
 export async function getReviews(req, res) {
     try {
-        const filterBy = {}
+        const filterBy = {
+            txt: req.query.txt || '',
+            toys: req.query.toys || null,
+            users: req.query.users || null,
+        }
         const reviews = await reviewService.query(filterBy)
         res.send(reviews)
     } catch (err) {

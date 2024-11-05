@@ -15,6 +15,7 @@ export const reviewService = {
 async function query(filterBy) {
     try {
         const criteria = _buildCriteria(filterBy)
+        console.log(criteria)
         const collection = await dbService.getCollection('review')
         let reviews = await collection.aggregate([
             {
@@ -168,12 +169,10 @@ async function update(review) {
 
 
 function _buildCriteria(filterBy) {
-    const { userId, toyId, txt } = filterBy
-
+    const { users, toys, txt } = filterBy
     const criteria = {}
     if (txt) criteria.txt = { $regex: filterBy.txt, $options: 'i' }
-    if (userId) criteria.userId = ObjectId.createFromHexString(userId)
-    if (toyId) criteria.toyId = ObjectId.createFromHexString(toyId)
-
+    if (users && users.length) criteria.userId = { $in: users.map(id=> ObjectId.createFromHexString(id)) } 
+    if (toys && toys.length) criteria.toyId= { $in: toys.map(id=> ObjectId.createFromHexString(id)) } 
     return criteria
 }
