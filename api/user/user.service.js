@@ -69,7 +69,7 @@ async function update(user) {
 			_id: ObjectId.createFromHexString(user._id),
 			username: user.username,
 			fullname: user.fullname,
-			score: user.score,
+			balace: user.balance,
 		}
 		const collection = await dbService.getCollection('user')
 		await collection.updateOne({ _id: userToSave._id }, { $set: userToSave })
@@ -91,7 +91,7 @@ async function add(user) {
 			username: user.username,
 			password: user.password,
 			fullname: user.fullname,
-			score: user.score || 0,
+			balance: user.balance || 0,
 		}
 		const collection = await dbService.getCollection('user')
 		await collection.insertOne(userToAdd)
