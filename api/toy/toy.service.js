@@ -57,7 +57,9 @@ async function add(toyToSave) {
     try {
         toyToSave.createdAt = Date.now()
         const connection = await dbService.getCollection('toy')
-        return await connection.insertOne(toyToSave)
+        const { insertedId }= await connection.insertOne(toyToSave)
+        toyToSave._id= insertedId
+        return toyToSave
     } catch (err) {
         loggerService.error('Cannot add toy', err)
         throw err
@@ -71,9 +73,11 @@ async function update(toy) {
             price: toy.price,
             labels: [...toy.labels],
             inStock: toy.inStock,
+            url: toy.url,
         }
         const connection = await dbService.getCollection('toy')
-        return await connection.updateOne({ _id: ObjectId.createFromHexString(toy._id) }, { $set: toyToSave })
+        await connection.updateOne({ _id: ObjectId.createFromHexString(toy._id) }, { $set: toyToSave })
+        return toyToSave
     } catch (err) {
         loggerService.error('Cannot update toy', err)
         throw err
